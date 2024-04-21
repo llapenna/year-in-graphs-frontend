@@ -36,5 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 ## Panda
-src/styles
-src/styles-studio
+styled-system
+styled-system-studio

@@ -5,8 +5,13 @@ export default defineConfig({
   preflight: true,
 
   // Where to look for your css declarations
-  cwd: 'src',
-  include: ['./components/*.{js,jsx,ts,tsx}', './app/*.{js,jsx,ts,tsx}'],
+  include: [
+    './src/components/*.{js,jsx,ts,tsx}',
+    './src/app/*.{js,jsx,ts,tsx}',
+  ],
+  // Path configuration
+  outdir: 'styled-system',
+  importMap: '@/styles',
 
   // Files to exclude
   exclude: [],
@@ -15,7 +20,4 @@ export default defineConfig({
   theme: {
     extend: {},
   },
-
-  // The output directory for your css system
-  outdir: 'styles',
 });
