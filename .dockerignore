@@ -1,0 +1,25 @@
+# Ignore development files and directories
+node_modules
+.next
+out
+
+# Ignore build artifacts
+build
+dist
+
+# Ignore version control files
+.git
+.gitignore
+
+# Ignore editor-specific files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Ignore miscellaneous files
+.DS_Store
+Thumbs.db
+
+# Ignore PandaCSS files
+styled-system
