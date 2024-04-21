@@ -5,8 +5,8 @@
   "scripts": {
     "prepare": "panda codegen",
     "dev": "next dev",
+    "start": "next start -p 4000",
     "build": "next build",
-    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
