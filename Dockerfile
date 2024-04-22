@@ -15,4 +15,5 @@ COPY . ./
 RUN pnpm build
 
 # Start application
+EXPOSE 4000
 CMD ["pnpm", "start"]
