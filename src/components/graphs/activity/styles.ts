@@ -68,4 +68,3 @@ export const day = sva({
     level: undefined,
   },
 });
-
