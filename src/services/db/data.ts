@@ -1,5 +1,6 @@
 import { Data, User } from '@prisma/client';
 import { prisma } from './instance';
+import { info } from '@/utils/logger';
 
 export type LastYearData = Pick<Data, 'id' | 'mood' | 'createdAt'>[];
 /**
@@ -38,7 +39,7 @@ export const getDayData = async (userId: User['id'], date: Date) => {
   const startDate = new Date(date);
   startDate.setHours(0, 0, 0, 0);
 
-  const endDate = new Date(date);
+  const endDate = new Date(startDate);
   endDate.setHours(23, 59, 59, 999);
 
   return prisma.data.findFirst({
