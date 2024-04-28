@@ -1,6 +1,6 @@
 import { Body } from '../page';
 
-const Page = () => {
+const Default = () => {
   return (
     <div>
       <Body></Body>
@@ -8,4 +8,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Default;
