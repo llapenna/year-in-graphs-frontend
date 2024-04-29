@@ -23,7 +23,11 @@ export const Day = ({ date, mood }: DayProps) => {
 
   return (
     <div className={classes.wrapper}>
-      <Link className={classes.link} href={`/view/${stringDate}`}></Link>
+      <Link
+        className={classes.link}
+        href={`/view/${stringDate}`}
+        scroll={false}
+      ></Link>
 
       <div className={classes.tooltip}>
         {d2s(date)} ({mood})
