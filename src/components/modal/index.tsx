@@ -1,27 +1,36 @@
 import Link from 'next/link';
-import { modal } from './styles';
+import { header, modal } from './styles';
 
-interface Props {
-  isOpen?: boolean;
+interface HeaderProps {
   title: string;
-  children?: React.ReactNode;
   onClose?: string;
+}
+const Header = ({ title, onClose }: HeaderProps) => {
+  const classes = header();
+  return (
+    <div className={classes.header}>
+      {title && <h2>{title}</h2>}
+      {onClose && (
+        <Link className={classes.close} href={onClose}>
+          x
+        </Link>
+      )}
+    </div>
+  );
+};
+
+interface Props extends HeaderProps {
+  isOpen?: boolean;
+  children?: React.ReactNode;
 }
 export const Modal = ({ title, isOpen = false, onClose, children }: Props) => {
   const classes = modal({ isOpen });
   return (
-    <dialog className={classes.wrapper}>
-      <div className={classes.content}>
-        <div className={classes.header}>
-          {title && <h2>{title}</h2>}
-          {onClose && (
-            <Link className={classes.close} href={onClose}>
-              x
-            </Link>
-          )}
-        </div>
+    <div className={classes.backdrop}>
+      <dialog className={classes.dialog} open={true}>
+        <Header {...{ title, onClose }}></Header>
         {children}
-      </div>
-    </dialog>
+      </dialog>
+    </div>
   );
 };
