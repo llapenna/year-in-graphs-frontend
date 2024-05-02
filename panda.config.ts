@@ -1,5 +1,7 @@
 import { defineConfig } from '@pandacss/dev';
 
+import * as recipes from '@/styles/custom-recipes/';
+
 export default defineConfig({
   // Whether to use css reset
   preflight: true,
@@ -19,6 +21,13 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      recipes: {
+        title: recipes.titleRecipe,
+      },
+      slotRecipes: {
+        editForm: recipes.editFormRecipe,
+      },
+    },
   },
 });
