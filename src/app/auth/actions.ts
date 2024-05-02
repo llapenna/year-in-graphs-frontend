@@ -1,6 +1,5 @@
 'use server';
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 import jwt from 'jsonwebtoken';
 
 /**
@@ -13,11 +12,8 @@ export const setCookies = (token: string) => {
     const { id } = jwt.verify(token, process.env.JWT_SECRET as string) as {
       id: string;
     };
-    console.log('Verified!', id);
     cookies().set('userId', id);
   } catch (e) {
     console.error('Invalid JWT found in URL. No cookies to set.', e);
   }
-
-  redirect('/');
 };
