@@ -29,7 +29,18 @@ export const getLastYearDays = () => {
   return days;
 };
 
-type ValidMood = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | undefined;
+type ValidMood =
+  | '0'
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | undefined;
 /**
  * Validates a mood value.
  * @param mood Mood value from the DB.
@@ -37,5 +48,5 @@ type ValidMood = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | undefined;
  */
 export const validatedMood = (mood: number): ValidMood => {
   if (!mood || mood < 0 || mood > 10) return undefined;
-  else return mood as ValidMood;
+  else return String(mood) as ValidMood;
 };

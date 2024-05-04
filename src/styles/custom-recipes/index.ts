@@ -1,2 +1,3 @@
-export { editFormRecipe } from './editForm';
-export { titleRecipe } from './title';
+export * from './editForm';
+export * from './title';
+export * from './activity';

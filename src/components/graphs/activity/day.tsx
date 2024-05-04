@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { day } from './styles';
 import { dateToString as d2s, validatedMood } from './utils';
+import { activityDay } from '@/styles/recipes';
 
 const days: Record<number, string> = {
   0: 'Sunday',
@@ -19,10 +19,10 @@ interface DayProps {
 }
 export const Day = ({ date, mood }: DayProps) => {
   const stringDate = d2s(date);
-  const classes = day({ level: validatedMood(mood) });
+  const classes = activityDay({ level: validatedMood(mood) });
 
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.box}>
       <Link
         className={classes.link}
         href={`/view/${stringDate}`}

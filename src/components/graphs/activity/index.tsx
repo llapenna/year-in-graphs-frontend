@@ -1,9 +1,9 @@
 import { LastYearData } from '@/services/db/data';
 import { css } from '@/styles/css';
+import { activity } from '@/styles/recipes';
 
 import { getLastYearDays, dateToString as d2s } from './utils';
 import { Day } from './day';
-import { activity } from './styles';
 
 interface OffsetProps {
   by: number;

@@ -24,9 +24,11 @@ export default defineConfig({
     extend: {
       recipes: {
         title: recipes.titleRecipe,
+        activity: recipes.activityRecipe,
       },
       slotRecipes: {
         editForm: recipes.editFormRecipe,
+        activityDay: recipes.activityDayRecipe,
       },
     },
   },
